@@ -1,4 +1,5 @@
 import { call, put } from 'redux-saga/effects';
+import { toast } from 'react-toastify';
 import api from '~/services/api';
 
 import AuthActions from '../ducks/auth';
@@ -11,6 +12,6 @@ export function* signIn({ email, password }) {
 
     yield put(AuthActions.signInSuccess(response.data.token));
   } catch (err) {
-    console.log(err);
+    toast.error('Verifique seu e-mail/senha!');
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 import { Provider } from 'react-redux';
 
 import store from './store';
@@ -12,6 +13,7 @@ export default function src() {
       <>
         <Routes />
         <GlobalStyle />
+        <ToastContainer autoClose={3000} />
       </>
     </Provider>
   );
